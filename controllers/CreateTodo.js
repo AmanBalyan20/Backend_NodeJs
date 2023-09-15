@@ -1,11 +1,11 @@
 //This file contains all the logic that what will gona be happen to the databse 
 
-const Todo = require('..\models\TodoSchema');
+const Todo = require("../models/TodoSchema");
 
-exports.CreateTodo = async (req ,res) => {
+exports.CreateTodo = async (req,res) => {
   try{
     //This step is used to extract title and description using the Destructring
-    const{ Tittle , Description } = req.body;
+    const {Tittle , Description } = req.body;
 
     //Creating the objects and inserting into the DataBase
     const response = await Todo.create({Tittle,Description});
