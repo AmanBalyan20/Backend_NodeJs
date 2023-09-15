@@ -26,4 +26,4 @@ const TSchema = new mongoose.Schema(
     }
 );
 
-module . exports = mongoose.model("TodoSchema", TSchema);
+module . export = mongoose.model("TodoSchema", TSchema);
