@@ -1,25 +1,23 @@
 const express = require('express');
 const app = express();
 
-//Now load all the configuration from the env file
+// Load all the configuration from the env file
 require("dotenv").config();
-const port = process.env.port || 3011;
+const port = process.env.PORT || 3011; // Corrected variable name to PORT
 
-
-require("dotenv").config();
 app.use(express.json());
 
-const todoRoute =require('./routes/TodoRoute');
+const todoRoute = require('./routes/TodoRoute');
 
-app.use('/v1',todoRoute);
+app.use('/v1', todoRoute);
 
-app.listen(port, ()=> {
-    console.log("Your Server has been started ")
-})
+app.listen(port, () => {
+    console.log("Your Server has been started ");
+});
 
 const dbConnect = require("./config/dbConnection");
 dbConnect();
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send('Welcome to the home');
-})
+});
